@@ -1,10 +1,13 @@
 CommandParser
 ======
 
-CommandParser is a small Java library for parsing command line arguments and generating help text.
+CommandParser is a small Java library for parsing command line arguments and generating help text. 
+
+For more information take a look at [example.java](https://github.com/NoHitzz/CommandParser/blob/main/src/example.java).
+
 <p float="middle">
-  <img src="resources/commandparser_screenshot1.png" width="500" />
-  <img src="resources/commandparser_screenshot2.png" width="500" /> 
+  <img src="resources/commandparser_screenshot1.png" width="400" />
+  <img src="resources/commandparser_screenshot2.png" width="400" /> 
 </p>
 
 Features
