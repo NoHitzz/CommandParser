@@ -11,7 +11,7 @@ public final class SwitchParam extends Parameter {
     private boolean value = false;
 
     public SwitchParam(String name, String shortName, boolean defaultValue, String description) {
-        super(name, shortName, description);
+        super(name, shortName, "", description);
         value = defaultValue;
     }
 
