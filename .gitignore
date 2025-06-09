@@ -14,7 +14,7 @@ javadoc
 checkstyle
 *.sh
 
-*example*
+*test*
 
 *.class
 
