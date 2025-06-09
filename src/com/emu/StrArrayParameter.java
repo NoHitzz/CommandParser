@@ -14,14 +14,20 @@ public final class StrArrayParameter extends Parameter {
     private ArrayList<String> value;
     private int arity;
 
-    public StrArrayParameter(String name, String shortName, int arity, String description) {
-        super(name, shortName, description);
+    public StrArrayParameter(String name, String shortName, int arity, String metaVar, String description) {
+        super(name, shortName, metaVar, description);
         this.value = new ArrayList<>(arity);
         this.arity = arity;
     }
 
-    public StrArrayParameter(String name, String shortName, String description) {
-        super(name, shortName, description);
+    public StrArrayParameter(String name, String shortName, int arity, String metaVar) {
+        super(name, shortName, metaVar);
+        this.value = new ArrayList<>(arity);
+        this.arity = arity;
+    }
+
+    public StrArrayParameter(String name, String shortName, String metaVar) {
+        super(name, shortName, metaVar);
         this.value = new ArrayList<>();
         this.arity = Parameter.VAR_ARITY;
     }

@@ -10,8 +10,13 @@ package com.emu;
 public final class BoolParam extends Parameter {
     private boolean value = false;
 
-    public BoolParam(String name, String shortName, boolean defaultValue, String description) {
-        super(name, shortName, description);
+    public BoolParam(String name, String shortName, boolean defaultValue, String metaVar, String description) {
+        super(name, shortName, metaVar, description);
+        value = defaultValue;
+    }
+
+    public BoolParam(String name, String shortName, boolean defaultValue, String metaVar) {
+        super(name, shortName, metaVar);
         value = defaultValue;
     }
 

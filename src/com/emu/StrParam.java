@@ -10,8 +10,13 @@ package com.emu;
 public final class StrParam extends Parameter {
     private String value;
 
-    public StrParam(String name, String shortName, String defaultValue, String description) {
-        super(name, shortName, description);
+    public StrParam(String name, String shortName, String defaultValue, String metaVar, String description) {
+        super(name, shortName, metaVar, description);
+        value = defaultValue;
+    }
+
+    public StrParam(String name, String shortName, String defaultValue, String metaVar) {
+        super(name, shortName, metaVar);
         value = defaultValue;
     }
 

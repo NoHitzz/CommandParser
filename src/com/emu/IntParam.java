@@ -10,8 +10,13 @@ package com.emu;
 public final class IntParam extends Parameter {
     private int value;
 
-    public IntParam(String name, String shortName, int defaultValue, String description) {
-        super(name, shortName, description);
+    public IntParam(String name, String shortName, int defaultValue, String metaVar, String description) {
+        super(name, shortName, metaVar, description);
+        value = defaultValue;
+    }
+
+    public IntParam(String name, String shortName, int defaultValue, String metaVar) {
+        super(name, shortName, metaVar);
         value = defaultValue;
     }
 

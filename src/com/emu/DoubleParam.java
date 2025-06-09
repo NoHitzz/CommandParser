@@ -10,8 +10,13 @@ package com.emu;
 public final class DoubleParam extends Parameter {
     private double value;
 
-    public DoubleParam(String name, String shortName, double defaultValue, String description) {
-        super(name, shortName, description);
+    public DoubleParam(String name, String shortName, double defaultValue, String metaVar, String description) {
+        super(name, shortName, metaVar, description);
+        value = defaultValue;
+    }
+
+    public DoubleParam(String name, String shortName, double defaultValue, String metaVar) {
+        super(name, shortName, metaVar);
         value = defaultValue;
     }
 

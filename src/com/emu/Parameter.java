@@ -28,41 +28,49 @@ public abstract class Parameter {
     private final String longName;
     private final String shortName;
     private String description;
-    private String metaVar = "VALUE";
+    private String metaVar;
     private boolean required = false;
     private boolean invoked = false;
 
     /**
-     * Class constructor for Paramater without short option name.
-     * @param name Long option name (--name).
-     */
-    public Parameter(String name) {
-        this.longName = name;
-        this.shortName = "";
-        this.description = "";
-    }
-
-    /**
-     * Class constructor for Paramater with long and short option name.
+     * Class constructor for Paramater.
      * @param name Long version option name (--name).
-     * @param shortName Short option name (-n).
+     * @param shortName Short option name (-n) or empty string (meaning no short option name).
+     * @param metaVar Usage text parameter argument type name.
+     * @param description Description for the help text.
      */
-    public Parameter(String name, String shortName) {
+    public Parameter(String name, String shortName, String metaVar, String description) {
         this.longName = name;
         this.shortName = shortName;
-        this.description = "";
-    }
-
+        this.description = description;
+        this.metaVar = metaVar;
+    }   
+    
     /**
-     * Class constructor for Paramater with long and short option names.
+     * Class constructor for Paramater. 
      * @param name Long version option name (--name).
      * @param shortName Short option name (-n).
      * @param description Description for the help text.
      */
-    public Parameter(String name, String shortName, String description) {
-        this.longName = name;
-        this.shortName = shortName;
-        this.description = description;
+    public Parameter(String name, String shortName, String metaVar) {
+        this(name, shortName, metaVar, "");
+    }
+
+    /**
+     * Class constructor for Paramater.
+     * @param name Long version option name (--name).
+     * @param shortName Short option name (-n) or empty string (meaning no short option name).
+     */
+    public Parameter(String name, String shortName) {
+        this(name, shortName, "VALUE", "");
+    }
+
+    /**
+     * Class constructor for Paramater.
+     * @param name Long option name (--name).
+     */
+    public Parameter(String name) {
+        this(name, "", "VALUE", "");
     }
 
     /**
@@ -86,11 +94,9 @@ public abstract class Parameter {
     }
 
     /**
-     * Sets metaVar, used in help text to specify parameter argument type (Default: VALUE).
+     * Field metaVar is used in help text to specify parameter argument type (Default: VALUE).
      * @param metaVar String used in help text
      */
-    public void setMetaVar(String metaVar) { this.metaVar = metaVar.toUpperCase(); }
-
     public String getMetaVar() { return metaVar; }
 
     void setInvoked() { invoked = true; }
